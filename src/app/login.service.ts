@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
   headers: object;
-  myPesonalToken!: string;
+  personalAccessToken!: string;
 
   constructor(private http: HttpClient) {
     this.headers = {
@@ -15,7 +15,7 @@ export class LoginService {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': 'Basic ' + btoa("" + ":" + this.myPesonalToken)
+        'Authorization': 'Basic ' + btoa("" + ":" + this.personalAccessToken)
       }),
     }
   }
